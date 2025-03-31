@@ -444,6 +444,10 @@ label {
       opacity: 1;
     }
   }
+      /* Por defecto: color original */
+.responsive-icon {
+    filter: none;
+}
 /* ---------------------- RESPONSIVE ---------------------- */
 @media (max-width: 768px) {
     .navbar {
@@ -462,9 +466,9 @@ label {
         transition: all 0.3s ease-in-out;
         border-radius: 5px;
     }
-    .lord-icon{
-        color: white;
-    }
+    .responsive-icon {
+        filter: brightness(0) invert(1);
+      }
     .navbar ul li a {
         color:white;
     }

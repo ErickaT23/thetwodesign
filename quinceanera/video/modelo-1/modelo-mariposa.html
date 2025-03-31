@@ -31,7 +31,9 @@
             <li><a href="/quinceanera/quinceanera.html">Quinceañera</a></li>
             <li><a href="/celebraciones/celebraciones.html">Celebraciones</a></li>
             <li><a href="/cart.html" class="cart-container">
-                <lord-icon src="https://cdn.lordicon.com/ggirntso.json" trigger="loop"
+                <lord-icon src="https://cdn.lordicon.com/ggirntso.json" 
+                class="responsive-icon"
+                trigger="loop"
                 stroke="light" colors="primary:#1111,secondary:#1111"
                 style="width:40px;height:40px"></lord-icon>
                 <span id="cart-count" class="cart-badge">0</span>
@@ -43,15 +45,15 @@
     <section class="product-detail">
         <div class="thumbnail-images">
             <!-- Miniaturas para escritorio -->
-            <img id="mainImg" src="/quinceanera/video/modelo-1/media/0.png" alt="Vista principal" class="main-image" onclick="expandImage()">
+            <img id="mainImg" src="/quinceanera/video/modelo-1/media/0.png" alt="Vista principal" class="main-image" onclick="expandImage()" loading="lazy">
             <div class="desktop-thumbnails">
-                <img src="/quinceanera/video/modelo-1/media/0.png" onclick="changeImage(this)" alt="Vista 1">
-                <img src="/quinceanera/video/modelo-1/media/1.png" onclick="changeImage(this)" alt="Vista 2">
-                <img src="/quinceanera/video/modelo-1/media/2.png" onclick="changeImage(this)" alt="Vista 3">
-                <img src="/quinceanera/video/modelo-1/media/3.png" onclick="changeImage(this)" alt="Vista 4">
-                <img src="/quinceanera/video/modelo-1/media/4.png" onclick="changeImage(this)" alt="Vista 5">
-                <img src="/quinceanera/video/modelo-1/media/5.png" onclick="changeImage(this)" alt="Vista 6">
-                <img src="/quinceanera/video/modelo-1/media/6.png" onclick="changeImage(this)" alt="Vista 7">
+                <img src="/quinceanera/video/modelo-1/media/0.png" onclick="changeImage(this)" alt="Vista 1" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/1.png" onclick="changeImage(this)" alt="Vista 2" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/2.png" onclick="changeImage(this)" alt="Vista 3" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/3.png" onclick="changeImage(this)" alt="Vista 4" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/4.png" onclick="changeImage(this)" alt="Vista 5" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/5.png" onclick="changeImage(this)" alt="Vista 6" loading="lazy">
+                <img src="/quinceanera/video/modelo-1/media/6.png" onclick="changeImage(this)" alt="Vista 7" loading="lazy">
             </div>
         </div>        
         <!-- Slider solo para responsive -->
@@ -93,8 +95,8 @@
                     <!-- Redes Sociales -->
                         <h4>Síguenos</h4>
                         <div class="icons">
-                         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                         <a href="https://www.instagram.com/thetwodesign/" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://www.facebook.com/thetwodesign/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                          <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
                        </div>
                 </div>
@@ -112,6 +114,13 @@
                      style="width:50px;height:50px">
                   </lord-icon>
                 </a>
+                              <!-- Popup de invitación agregada -->
+                              <div id="cart-popup" class="popup-overlay">
+                                <div class="popup-content">
+                                  <p>🎉 Invitación agregada con éxito</p>
+                                  <button onclick="window.location.href='/cart.html'">Ir al carrito</button>
+                                </div>
+                          </div>
             <!-- Scripts -->
             <script src="/quinceanera/video/modelo-1/script.js"></script>
 </body>

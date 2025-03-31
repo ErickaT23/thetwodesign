@@ -127,11 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             cart.push({ id, name, price, currency, quantity: 1, image });
         }
-
+    
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
+    
+        // Mostrar popup SOLO cuando se agrega producto
+        const popup = document.getElementById("cart-popup");
+        popup.style.display = "flex";
+    
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 4000);
     }
-
+    
     // Inicializar el conteo del carrito
     updateCartCount();
 

@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "http://thetwodesign.com/*"
+  to = "https://www.thetwodesign.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thetwodesign.com/*"
+  to = "https://www.thetwodesign.com/:splat"
+  status = 301
+  force = true

@@ -90,6 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cart", JSON.stringify(cart));
         updateCartCount();
 
+             // 🔥 Evento para Google Ads y Analytics
+             gtag('event', 'add_to_cart', {   
+                currency: currency,
+                value: Number(price),
+                 items: [{
+                item_id: id,
+                item_name: name,
+                price: Number(price),
+                quantity: 1
+                 }]
+             });
+
           // Mostrar popup SOLO cuando se agrega producto
           const popup = document.getElementById("cart-popup");
           popup.style.display = "flex";

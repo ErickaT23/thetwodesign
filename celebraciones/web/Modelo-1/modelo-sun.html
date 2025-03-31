@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Sun</title>
+    <link rel="stylesheet" href="/celebraciones/web/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+     <!-- AOS Library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <!-- Menú -->
+    <nav class="navbar">
+        <a href="/index.html">
+            <img src="/images/logo-negro.png" alt="Two Design Logo">
+        </a>
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>   
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/wedding/wedding.html">Bodas</a></li>
+            <li><a href="/quinceanera/quinceanera.html">Quinceañera</a></li>
+            <li><a href="/celebraciones/celebraciones.html">Celebraciones</a></li>
+            <li><a href="/cart.html" class="cart-container">
+                <lord-icon src="https://cdn.lordicon.com/ggirntso.json" trigger="loop"
+                stroke="light" colors="primary:#1111,secondary:#1111"
+                style="width:40px;height:40px"></lord-icon>
+                <span id="cart-count" class="cart-badge">0</span>
+            </a></li>
+            <li><a href="/contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <!--INFORMACION INVITACIONS-->
+    <section class="product-detail">
+        <div class="thumbnail-images">
+            <!-- Miniaturas para escritorio -->
+            <img id="mainImg" src="/celebraciones/web/Modelo-1/media/0.png" alt="Vista principal" class="main-image" onclick="expandImage()">
+            <div class="desktop-thumbnails">
+                <img src="/celebraciones/web/Modelo-1/media/0.png" onclick="changeImage(this)" alt="Vista 1">
+                <img src="/celebraciones/web/Modelo-1/media/1.png" onclick="changeImage(this)" alt="Vista 2">
+                <img src="/celebraciones/web/Modelo-1/media/2.png" onclick="changeImage(this)" alt="Vista 3">
+                <img src="/celebraciones/web/Modelo-1/media/3.png" onclick="changeImage(this)" alt="Vista 4">
+                <img src="/celebraciones/web/Modelo-1/media/4.png" onclick="changeImage(this)" alt="Vista 5">
+                <img src="/celebraciones/web/Modelo-1/media/5.png" onclick="changeImage(this)" alt="Vista 6">
+            </div>
+        </div>        
+        <!-- Slider solo para responsive -->
+        <div class="image-slider">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <img id="sliderImg" src="/celebraciones/web/Modelo-1/media/0.png" alt="Vista principal">
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <p id="image-counter">1/5</p>
+        
+        <div class="product-info">
+            <h2>Modelo Sun</h2>
+            <a href="#" class="btn" onclick="openInvitation()">Ver invitación</a>
+            <div>
+                <button class="btn btn-basic" onclick="showPackage('basic')" data-package="basic">Basic</button>
+                <button class="btn btn-premium" onclick="showPackage('premium')" data-package="premium">Premium</button>
+            </div>
+            <div id="package-details" class="package-info"></div>
+            <div>
+                <label>
+                    <input type="checkbox" id="currency-toggle" onclick="toggleCurrency()"> Comprar fuera de Guatemala (USD)
+                </label>
+            </div>
+            <button id="price-btn" class="price-btn">Precio: Q789</button>            
+            <button class="btn add-to-cart">Agregar al carrito</button>
+            <!-- Sección de formas de pago -->
+            <section class="payment-options">
+                <h3>Formas de Pago</h3>
+                <div class="payment-icons">
+                    <img src="/wedding/web/Modelo-1/media/visa+mastercard.png" alt="Visa-Mastercard">
+                    <img src="/wedding/web/Modelo-1/media/Transferencia Bancaria.png" alt="Transferencia Bancaria">
+                    <img src="/wedding/web/Modelo-1/media/paypal.png" alt="PayPal">
+                </div>
+            </section>
+        </div>
+    </section>
+            <!-- Footer -->
+            <footer>
+                <div class="footer-container">
+                    <!-- Redes Sociales -->
+                        <h4>Síguenos</h4>
+                        <div class="icons">
+                         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                         <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                       </div>
+                </div>
+                <!-- Texto final -->
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Two Design. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+            <!-- Burbuja de WhatsApp -->
+                <a href="https://wa.me/50236011737" target="_blank" class="whatsapp-bubble" data-aos="zoom-in">
+                   <lord-icon
+                     src="https://cdn.lordicon.com/dnphlhar.json"
+                     stroke="light"
+                     colors="primary:#fff,secondary:#fff"
+                     style="width:50px;height:50px">
+                  </lord-icon>
+                </a>
+            <!-- Scripts -->
+            <script src="/celebraciones/web/Modelo-1/script.js"></script>
+</body>
+</html>

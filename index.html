@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+     <!-- AOS Library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+  <body>
+    <nav class="navbar">
+        <a href="/index.html">
+            <img src="/images/logo.png" alt="logo">
+        </a>
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>     
+        <ul class="menu">
+            <li><a href="/index.html">
+                <lord-icon
+                 src="https://cdn.lordicon.com/jeuxydnh.json"
+                 stroke="light"
+                 colors="primary:#ffffff,secondary:#ffffff"
+                 style="width:55px;height:55px">
+               </lord-icon>
+            </a></li>
+            <li><a href="/wedding/wedding.html">Bodas</a></li>
+            <li><a href="/quinceanera/quinceanera.html">Quinceañera</a></li>
+            <li><a href="/celebraciones/">Celebraciones</a></li>
+            <li><a href="/cart.html" class="cart-container">
+                <lord-icon
+                 src="https://cdn.lordicon.com/ggirntso.json"
+                 trigger="loop"
+                 stroke="light"
+                 colors="primary:#ffffff,secondary:#ffffff"
+                 style="width:55px;height:55px">
+                </lord-icon>
+                <span id="cart-count" class="cart-badge">0</span>
+            </a></li>
+            <li><a href="/contact.html">Contacto</a></li>
+        </ul>
+    </nav>    
+     <!--seccion de fotos home page-->
+     <section class="carousel">
+        <div class="carousel-indicators"></div>
+        <div class="carousel-item" id="slide1" style="background-image: url('/images/wedding-homepage.png');">
+            <h2 data-aos="fade-up"> El primer capítulo de tu "Para siempre"</h2>
+            <a href="/wedding/wedding.html" class="btn" data-aos="zoom-in">Ver invitaciones</a>
+        </div>
+        <div class="carousel-item" id="slide2" style="background-image: url('/images/quinceanera-homepage.png');">
+            <h2 data-aos="fade-up">Tu cuento de hadas comienza aquí</h2>
+            <a href="/quinceanera/quinceanera.html" class="btn" data-aos="zoom-in">Descúbrelas aquí</a>
+        </div>
+        <div class="carousel-item" id="slide3" style="background-image: url('/images/celebraciones-homepage.png');">
+            <h2 data-aos="fade-up">Cada evento merece una gran entradas</h2>
+            <a href="/celebraciones/celebraciones.html" class="btn" data-aos="zoom-in">Ver opciones</a>
+        </div>
+     </section>
+    <!--seccion beneficios-->
+    <section class="features-carousel">
+        <h3 data-aos="fade-up" >Beneficios de una invitación digital</h3>
+        <div class="container-features" data-aos="zoom-in">
+            <div class="features-wrapper">
+                <div class="feature">
+                    <lord-icon src="https://cdn.lordicon.com/okgbpdra.json" trigger="loop"
+                        stroke="light" colors="primary:#aca17d,secondary:#FFA500"
+                        style="width:100px;height:100px"></lord-icon>
+                    <h1>Diseño exclusivo y personalizable</h1>
+                </div>
+                <div class="feature">
+                    <lord-icon src="https://cdn.lordicon.com/fozsorqm.json" trigger="loop"
+                        stroke="light" colors="primary:#aca17d,secondary:#FFA500"
+                        style="width:100px;height:100px"></lord-icon>
+                    <h1>Comparte sin límites</h1>
+                </div>
+                <div class="feature">
+                    <lord-icon src="https://cdn.lordicon.com/onmwuuox.json" trigger="loop"
+                        stroke="light" colors="primary:#aca17d,secondary:#FFA500"
+                        style="width:100px;height:100px"></lord-icon>
+                    <h1>Toda la información en un solo lugar</h1>
+                </div>
+                <div class="feature">
+                    <lord-icon src="https://cdn.lordicon.com/hmzvkifi.json" trigger="loop"
+                        stroke="light" colors="primary:#aca17d"
+                        style="width:100px;height:100px"></lord-icon>
+                    <h1>Actualización fácil y rápida</h1>
+                </div>
+                <div class="feature">
+                    <lord-icon src="https://cdn.lordicon.com/zruuduya.json" trigger="loop"
+                        stroke="light" colors="primary:#aca17d,secondary:#FFA500"
+                        style="width:100px;height:100px"></lord-icon>
+                    <h1>Ecológicas y accesibles</h1>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!--sección testimonios-->
+    <section class="testimonials">
+        <h3 data-aos="fade-up">Testimonios de Clientes</h3>
+        <div class="testimonials-wrapper">
+            <button class="testimonial-prev">&#10094;</button> <!-- Flecha izquierda -->
+            <div class="testimonial active" data-aos="zoom-in">
+                <h4>María González</h4>
+                <h5>Modelo: Elegance Rose</h5>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Me encantó la facilidad y el diseño de las invitaciones. ¡Totalmente recomendado!"</p>
+            </div>
+            <div class="testimonial" data-aos="zoom-in">
+                <h4>Carlos Ramírez</h4>
+                <h5>Modelo: Golden Glam</h5>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"La mejor experiencia, los detalles y el servicio son increíbles. ¡Muy profesionales!"</p>
+            </div>
+            <div class="testimonial" data-aos="zoom-in">
+                <h4>Andrea López</h4>
+                <h5>Modelo: Classic Floral</h5>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Mis invitados quedaron encantados con la invitación digital. ¡Fue hermosa y fácil de compartir!"</p>
+            </div>
+            <button class="testimonial-next">&#10095;</button> <!-- Flecha derecha -->
+        </div>
+    </section>    
+        <!--sección cómo funciona-->
+     <section class="how-it-works">
+        <h3 data-aos="fade-up" >¿Cómo Funciona?</h3>
+        <div class="how-it-works-container">
+            <div class="step" data-aos="zoom-in">
+                <h1>1</h1><h2>Elige tu diseño</h2>
+                <p>Explora nuestras opciones y selecciona la invitación perfecta para tu evento.</p>
+            </div>
+            <div class="step" data-aos="zoom-in">
+                <h1>2</h1><h2>Compra en lína</h2>
+                <p>Agrega al carrito, realiza tu pago inicial del 50% y confirma tu pedido.</p>
+            </div>
+            <div class="step" data-aos="zoom-in">
+                <h1>3</h1><h2>Envíanos tu información</h2>
+                <p>Te contactaremos por WhatsApp para personalizar los detalles de tu invitación.</p>
+            </div>
+            <div class="step" data-aos="zoom-in">
+                <h1>4</h1><h2>Revisamos y ajustamos</h2>
+                <p>En 1-2 días hábiles recibirás tu invitación. Si necesitas cambios, los realizamos y te la enviamos de nuevo..</p>
+            </div>
+            <div class="step" data-aos="zoom-in">
+                <h1>5</h1><h2>Entrega final</h2>
+                <p>Cuando todo esté listo, pagas el 50% restante y recibirás tu invitación en los formatos elegidos.</p>
+            </div>
+            <h1>¡Así de simple!</h1>
+        </div>
+     </section>
+        <!--sección preguntas frecuentes-->
+        <section class="faq">
+            <h2 data-aos="fade-up" >Preguntas Frecuentes</h2>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">📌 ¿Qué incluye una invitación digital?</button>
+                <div class="faq-answer">
+                    <p>Nuestras invitaciones digitales pueden ser en formato web, imagen, video o PDF. Incluyen el diseño personalizado, datos del evento y funciones interactivas (según el paquete elegido).</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">🛍️ ¿Cómo puedo comprar una invitación?</button>
+                <div class="faq-answer">
+                    <p>Elige tu diseño favorito, agrégalo al carrito, realiza el pago del 50% y te contactaremos por WhatsApp para personalizar la invitación.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">💳 ¿Cuáles son los métodos de pago?</button>
+                <div class="faq-answer">
+                    <p>Aceptamos transferencias bancarias y pagos con tarjeta (según disponibilidad). El 50% se paga al iniciar y el 50% restante antes de la entrega final.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">⏳ ¿Cuánto tiempo tarda la entrega?</button>
+                <div class="faq-answer">
+                    <p>Recibirás la primera versión en un máximo de 1-2 días hábiles. Si necesitas ajustes, se realizan y se entrega la versión final tras el pago completo.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">🖌️ ¿Puedo solicitar cambios en la invitación?</button>
+                <div class="faq-answer">
+                    <p>Sí, incluimos ajustes en la personalización para que tu invitación quede perfecta. Si necesitas modificaciones adicionales, podemos cotizarlas aparte.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">📩 ¿Cómo recibo mi invitación digital?</button>
+                <div class="faq-answer">
+                    <p>Te la enviaremos por WhatsApp y correo electrónico en el formato que hayas elegido (web, imagen, video o PDF).</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">📲 ¿Cómo comparto mi invitación con los invitados?</button>
+                <div class="faq-answer">
+                    <p>Las invitaciones pueden enviarse fácilmente por WhatsApp, redes sociales o correo electrónico.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">🔄 ¿Puedo actualizar la información después de enviada?</button>
+                <div class="faq-answer">
+                    <p>Las invitaciones web permiten actualizaciones. En formatos de imagen, PDF o video, se puede hacer con un costo adicional.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">🎨 ¿Se pueden personalizar los diseños?</button>
+                <div class="faq-answer">
+                    <p>Sí, adaptamos cada invitación con tus colores, textos y detalles para que refleje tu estilo.</p>
+                </div>
+            </div>
+            <div class="faq-item" data-aos="zoom-in">
+                <button class="faq-question">🎂 ¿Hacen invitaciones para otros eventos además de bodas?</button>
+                <div class="faq-answer">
+                    <p>¡Sí! Ofrecemos invitaciones para XV años, cumpleaños, graduaciones y eventos corporativos.</p>
+                </div>
+            </div>
+        </section>
+        <!--sección contacto-->
+     <section class="contact">
+        <h3 data-aos="fade-up" >Contáctanos</h3>
+        <form action="https://formspree.io/f/xeoevvpv" method="POST" data-aos="zoom-in">
+            <input type="text" name="name" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Correo" required>
+            <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+     </section>
+    <!-- Footer -->
+     <footer>
+        <div class="footer-container">
+                <h4>Síguenos</h4>
+                <div class="icons">
+                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                 <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
+               </div>
+            </div>
+        <!-- Texto final -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Two Design. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Burbuja de WhatsApp -->
+        <a href="https://wa.me/50236011737" target="_blank" class="whatsapp-bubble" data-aos="zoom-in">
+           <lord-icon
+             src="https://cdn.lordicon.com/dnphlhar.json"
+             stroke="light"
+             colors="primary:#fff,secondary:#fff"
+             style="width:50px;height:50px">
+          </lord-icon>
+        </a>
+     <script src="/script.js"></script>
+ </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="/cart.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+     <!-- AOS Library -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+      <!-- Menú -->
+        <nav class="navbar">
+            <a href="/index.html">
+                <img src="/images/logo-negro.png" alt="Two Design Logo">
+            </a>
+            <!-- Botón hamburguesa -->
+            <button class="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>   
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/wedding/wedding.html">Bodas</a></li>
+                <li><a href="/quinceanera/quinceanera.html">Quinceañera</a></li>
+                <li><a href="/celebraciones/celebraciones.html">Celebraciones</a></li>
+                <li><a href="/cart.html" class="cart-container">
+                    <lord-icon src="https://cdn.lordicon.com/ggirntso.json" trigger="loop"
+                    stroke="light" colors="primary:#1111,secondary:#1111"
+                    style="width:40px;height:40px"></lord-icon>
+                    <span id="cart-count" class="cart-badge">0</span>
+                </a></li>
+                <li><a href="/contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    <main>
+        <div class="checkout-container">
+           <section class="order-summary">
+             <div class="checkout-header">
+                <h2>Resumen del Pedido</h2>
+                <a href="cart.html" class="back-link">⬅ Volver al carrito</a>
+             </div>
+             <div class="order-product">
+                <ul id="order-items"></ul>
+                <p>Total: <span id="order-total">0.00</span></p>
+             </div>
+           </section>
+              <!-- Checkout Form SIN facturación -->
+            <section class="checkout-form">
+             <div class="contactoinfo">
+                <h2>Datos de Contacto</h2>
+                 <!-- Nombre -->
+                <label>Nombre: <input type="text" id="name" required></label>
+                 <!-- Teléfono y Email en la misma línea -->
+                 <div class="contact-row">
+                    <label>Teléfono: <input type="text" id="phone" required></label>
+                    <label>Email: <input type="email" id="email" required></label>
+                 </div>
+                      <!-- País -->
+                      <label>País: <input type="text" id="country" required></label>
+             </div>
+            <div class="paymentinfo">
+             <h2>Método de Pago</h2>
+            <label>
+             <input type="radio" name="payment-method" value="transferencia" checked>
+             Transferencia Bancaria
+            </label>
+            <div class="payment-details active" id="transferencia-info">
+              Le compartiremos nuestra cuenta bancaria local para realizar la transferencia. No olvides enviar el comprobante.
+            </div>
+            <label>
+                <input type="radio" name="payment-method" value="tarjeta">
+                Tarjeta <img src="/wedding/web/Modelo-1/media/visa+mastercard.png">
+            </label>
+            <div class="payment-details" id="tarjeta-info">
+                Le estaremos enviando un link de pago para que pueda completar su pago. No olvide enviar el comprobante.
+            </div>
+            <label>
+                <input type="radio" name="payment-method" value="paypal">
+                Paypal <img src="/wedding/web/Modelo-1/media/paypal.png">
+            </label>
+            <div class="payment-details" id="paypal-info">
+                Compartiremos nuestro código de Paypal para que puedas completar el pago. No olvide enviar el comprobante.
+            </div>
+        </div>
+        <button id="pay-now">Pagar Ahora</button>
+             </section>
+       </div>
+   </main>
+     <!-- Footer -->
+     <footer>
+        <div class="footer-container">
+            <!-- Redes Sociales -->
+                <h4>Síguenos</h4>
+                <div class="icons">
+                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                 <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
+               </div>
+        </div>
+        <!-- Texto final -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Two Design. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Burbuja de WhatsApp -->
+        <a href="https://wa.me/50236011737" target="_blank" class="whatsapp-bubble" data-aos="zoom-in">
+           <lord-icon
+             src="https://cdn.lordicon.com/dnphlhar.json"
+             stroke="light"
+             colors="primary:#fff,secondary:#fff"
+             style="width:50px;height:50px">
+          </lord-icon>
+        </a>
+    <script src="/checkout.js"></script>
+</body>
+</html>

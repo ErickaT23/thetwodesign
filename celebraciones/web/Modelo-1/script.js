@@ -120,37 +120,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Función para agregar al carrito
-    function addToCart(id, name, price, currency, image) {
-        const existingItem = cart.find(item => item.id === id && item.image === image);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({ id, name, price, currency, quantity: 1, image });
-        }
+    // Función para agregar al carrito
+function addToCart(id, name, price, currency, image) {
+    const existingItem = cart.find(item => item.id === id && item.image === image);
 
-        localStorage.setItem("cart", JSON.stringify(cart));
-        updateCartCount();
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ id, name, price, currency, quantity: 1, image });
+    }
 
-             // 🔥 Evento para Google Ads y Analytics
-             gtag('event', 'add_to_cart', {   
-                currency: currency,
-                value: Number(price),
-                 items: [{
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+
+    // 🔥 Evento para Google Ads y Analytics (solo si gtag está disponible)
+    if (typeof gtag === 'function') {
+        gtag('event', 'add_to_cart', {
+            currency: currency,
+            value: Number(price),
+            items: [{
                 item_id: id,
                 item_name: name,
                 price: Number(price),
                 quantity: 1
-                 }]
-             });
-        
-          // Mostrar popup SOLO cuando se agrega producto
-          const popup = document.getElementById("cart-popup");
-          popup.style.display = "flex";
-      
-          setTimeout(() => {
-              popup.style.display = "none";
-          }, 4000);
+            }]
+        });
     }
+
+    // 🎉 Mostrar popup
+    const popup = document.getElementById("cart-popup");
+    if (popup) {
+        popup.style.display = "flex";
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 4000);
+    }
+}
+
 
     // Inicializar el conteo del carrito
     updateCartCount();

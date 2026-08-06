@@ -22,7 +22,9 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background: var(--white); /* Transparente */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -97,6 +99,7 @@ footer {
     background-color: var(--verde);
     width: 100%;
     height: 100%;
+    margin-top: auto;
     padding: 5px;
 }
 .footer-container {
@@ -153,7 +156,10 @@ footer {
 /*--ESTILOS NUEVOS--*/
 /* ---------------------- GENERAL ---------------------- */
 body{
-    background-color:white;
+    background-color: #fcf9f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 /* ---------------------- SECCIÓN DE PRODUCTOS ---------------------- */
 .products {
@@ -199,6 +205,26 @@ body{
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: inline-block;
 }
+.product img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+.model-visual {
+    width: 100%;
+    min-height: 220px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.theme-classic { background: linear-gradient(135deg, #9a7f71, #d7c4b8); }
+.theme-royal { background: linear-gradient(135deg, #43506f, #8ea0bd); }
+.theme-floral { background: linear-gradient(135deg, #b8828d, #e3bec6); }
+.theme-festive { background: linear-gradient(135deg, #7f8a6a, #c5cfb5); }
 .product:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
@@ -217,6 +243,13 @@ body{
     margin-bottom: 15px;
     font-weight: 300;
 }
+.model-format {
+    display: block;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #6d6059;
+}
 .product .btn {
     background: var(--cafecito);
     color: white;
@@ -228,6 +261,233 @@ body{
 }
 .product .btn:hover {
     background: #a47864;
+}
+.product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.product-actions .btn {
+    flex: 1;
+    text-align: center;
+}
+.product-actions .btn-buy {
+    background: var(--mocha-muse);
+}
+.demo-note {
+    width: 100%;
+    font-size: 13px;
+    color: #6f625b;
+    margin-top: -2px;
+}
+.product-actions .btn-disabled,
+.product-actions .btn-disabled:hover {
+    background: #beb9b5;
+    color: #f6f4f2;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.wedding-models {
+    text-align: center;
+    padding: 20px 20px 70px;
+}
+.wedding-models h2 {
+    font-size: 54px;
+    font-family: var(--great-vibes);
+    color: var(--mocha-muse);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.wedding-models > p {
+    font-size: 24px;
+    color: var(--rosita);
+    font-weight: 300;
+    margin-bottom: 26px;
+}
+.wedding-packages {
+    flex: 1;
+    padding: 120px 20px 70px;
+    text-align: center;
+    background: #fcf9f8;
+}
+.wedding-packages h2 {
+    font-size: 54px;
+    font-family: var(--league-spartan), serif;
+    color: #6f5a50;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.wedding-packages > p {
+    font-size: 24px;
+    color: #9a7f71;
+    font-weight: 300;
+    margin-bottom: 26px;
+}
+.wedding-packages-grid {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+.wedding-package-card {
+    background: #fff;
+    border: 1px solid rgba(202, 183, 175, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    text-align: center;
+}
+.wedding-package-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    background: #efe4df;
+    color: #7a5f53;
+    border-radius: 999px;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+}
+.wedding-package-tag.tag-template {
+    background: #efe7f7;
+    color: #625083;
+}
+.wedding-package-tag.tag-custom {
+    background: #e9f5ed;
+    color: #3f7354;
+}
+.wedding-package-tag.tag-bespoke {
+    background: #f8eadf;
+    color: #8b5e41;
+}
+.wedding-package-card h3 {
+    font-size: 34px;
+    color: var(--mocha-muse);
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+.wedding-package-card p {
+    font-size: 18px;
+    color: var(--cafecito);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+.wedding-package-price {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-size: 18px;
+    color: var(--orange);
+    font-weight: 600;
+    margin: 0 0 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #f8eadf;
+}
+.wedding-package-description {
+    color: #6b5d57;
+    font-size: 17px;
+    font-style: normal;
+    line-height: 1.45;
+    margin-bottom: 14px;
+}
+.wedding-package-card ul {
+    padding-left: 20px;
+    color: #6b5d57;
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: left;
+}
+.wedding-package-btn {
+    margin-top: 14px;
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    background: var(--mocha-muse);
+    color: #fff;
+    border-radius: 8px;
+    padding: 11px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.wedding-package-btn:hover {
+    background: #7b5b4d;
+    transform: translateY(-2px);
+}
+.wedding-package-tag.tag-template ~ .wedding-package-btn {
+    background: #625083;
+}
+.wedding-package-tag.tag-template ~ .wedding-package-btn:hover {
+    background: #4f406b;
+}
+.wedding-package-tag.tag-custom ~ .wedding-package-btn {
+    background: #3f7354;
+}
+.wedding-package-tag.tag-custom ~ .wedding-package-btn:hover {
+    background: #325c43;
+}
+.wedding-package-tag.tag-bespoke ~ .wedding-package-btn {
+    background: #8b5e41;
+}
+.wedding-package-tag.tag-bespoke ~ .wedding-package-btn:hover {
+    background: #734d35;
+}
+.event-card-boda h3 {
+    color: #6f5a50;
+}
+.event-card-boda .wedding-package-btn {
+    background: #625083;
+}
+.event-card-boda .wedding-package-btn:hover {
+    background: #4f406b;
+}
+.event-card-xv h3 {
+    color: #8b6282;
+}
+.event-card-xv .wedding-package-tag.tag-custom {
+    background: #f2e8f4;
+    color: #8b6282;
+}
+.event-card-xv .wedding-package-btn {
+    background: #8b6282;
+}
+.event-card-xv .wedding-package-btn:hover {
+    background: #75516d;
+}
+.event-card-celebracion h3 {
+    color: #73815b;
+}
+.event-card-celebracion .wedding-package-tag.tag-bespoke {
+    background: #edf3e4;
+    color: #73815b;
+}
+.event-card-celebracion .wedding-package-btn {
+    background: #73815b;
+}
+.event-card-celebracion .wedding-package-btn:hover {
+    background: #62704d;
+}
+.products-xv .product .btn {
+    background: #8b6282;
+}
+.products-xv .product .btn:hover {
+    background: #75516d;
+}
+.products-celebracion .product .btn {
+    background: #73815b;
+}
+.products-celebracion .product .btn:hover {
+    background: #62704d;
 }
 /* Por defecto: color original */
 .responsive-icon {
@@ -285,5 +545,23 @@ body{
     .product {
         width: 90%;
         margin: auto;
+    }
+    .wedding-packages h2 {
+        font-size: 44px;
+    }
+    .wedding-packages > p {
+        font-size: 20px;
+    }
+    .wedding-packages-grid {
+        grid-template-columns: 1fr;
+    }
+    .wedding-models h2 {
+        font-size: 44px;
+    }
+    .wedding-models > p {
+        font-size: 20px;
+    }
+    .wedding-package-btn {
+        font-size: 14px;
     }
 }

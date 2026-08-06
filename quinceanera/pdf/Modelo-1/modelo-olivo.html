@@ -64,18 +64,55 @@
         
         <div class="product-info" data-id="modelo-olivo">
             <h2>Modelo Olivo</h2>
+            <p class="package-info">Invitado: <span id="nombre-invitado">Nombre del Invitado</span></p>
+            <p class="package-info invitado-lugares">Hemos reservado para ti 2 <span id="texto-lugares">lugares especiales</span></p>
+            <p class="package-info">Cuenta regresiva: <span id="days">00</span>d <span id="hours">00</span>h <span id="minutes">00</span>m <span id="seconds">00</span>s</p>
             <a href="#" class="btn" onclick="openInvitation()">Ver invitación</a>
-            <div>
-                <button class="btn-pack" onclick="showPackage('basic')" data-package="basic"></button>
-            </div>
+            <button id="musica-btn" class="btn" type="button">Música</button>
             <div id="package-details" class="package-info"></div>
             <div>
                 <label>
-                    <input type="checkbox" id="currency-toggle" onclick="toggleCurrency()"> Comprar fuera de Guatemala (USD)
+                    <input type="checkbox" id="currency-toggle"> Comprar fuera de Guatemala (USD)
                 </label>
             </div>
             <button id="price-btn" class="price-btn">Precio: Q369</button>            
             <button class="btn add-to-cart">Agregar al carrito</button>
+            <section class="payment-options">
+                <h3>Confirmar Asistencia</h3>
+                <form id="rsvp-form" novalidate>
+                    <input type="text" id="rsvp-name" name="name" value="Nombre del Invitado" readonly>
+                    <label>
+                        <input type="radio" id="rsvp-response-yes" name="attendance" value="yes"> Sí, con mucho gusto
+                    </label>
+                    <label>
+                        <input type="radio" id="rsvp-response-no" name="attendance" value="no"> No, lamentablemente no podré
+                    </label>
+                    <div id="guest-count-wrapper">
+                        <select id="guest-count" name="guests">
+                            <option value="1">1 invitado</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" id="rsvp-submit">Confirmar asistencia</button>
+                </form>
+                <div id="rsvp-success">
+                    <p id="rsvp-final-message">Gracias por confirmar tu asistencia.</p>
+                </div>
+            </section>
+
+            <section class="payment-options">
+                <h3>Buenos Deseos</h3>
+                <form id="wish-form" onsubmit="return submitWish(event)">
+                    <input type="text" id="wish-name" name="name" placeholder="Tu nombre">
+                    <textarea id="wish-message" name="message" placeholder="Escribe tu mensaje" rows="5"></textarea>
+                    <button type="submit" class="btn">Enviar deseo</button>
+                    <p id="wish-status" aria-live="polite"></p>
+                </form>
+                <div id="wishes"></div>
+            </section>
+
+            <audio id="musica-audio" loop>
+                <source src="" type="audio/mpeg">
+            </audio>
             <!-- Sección de formas de pago -->
             <section class="payment-options">
                 <h3>Formas de Pago</h3>
@@ -112,14 +149,18 @@
                      style="width:50px;height:50px">
                   </lord-icon>
                 </a>
-                         <!-- Popup de invitación agregada -->
+            <!-- Popup de invitación agregada -->
                          <div id="cart-popup" class="popup-overlay">
                             <div class="popup-content">
                               <p>🎉 Invitación agregada con éxito</p>
                               <button onclick="window.location.href='/cart.html'">Ir al carrito</button>
                             </div>
                       </div>
+
             <!-- Scripts -->
+            <script src="/quinceanera/pdf/Modelo-1/config.js"></script>
+            <script src="/quinceanera/pdf/Modelo-1/script-ecommerce.js"></script>
             <script src="/quinceanera/pdf/Modelo-1/script.js"></script>
+            <script type="module" src="/quinceanera/pdf/Modelo-1/database.js"></script>
 </body>
 </html>

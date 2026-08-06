@@ -9,6 +9,9 @@
     --cafecito: #cab7af;
     --verde:#aca17d;
     --rosita: #d2a99f;
+    --cta-hover: #9f5628;
+    --focus-ring: rgba(184, 106, 53, 0.35);
+    --cta-hover-text: #fffaf6;
 }
 /* Reset básico */
 * {
@@ -97,6 +100,7 @@ footer {
     background-color: var(--verde);
     width: 100%;
     height: 100%;
+    margin-top: auto;
     padding: 5px;
 }
 .footer-container {
@@ -154,6 +158,9 @@ footer {
 /* ---------------------- GENERAL ---------------------- */
 body{
     background-color:white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 /* ---------------------- SECCIÓN DE PRODUCTOS ---------------------- */
 .products-list{
@@ -162,17 +169,18 @@ body{
 }
 .product-container {
     display: flex;
-    gap: 30px;
+    gap: 22px;
     justify-content: center;
-    max-width: 1000px;
+    max-width: 1040px;
     margin: auto;
     align-items: center;
     justify-items: center;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 .products-list h2 {
-    font-size: 60px;
-    font-family: var(--great-vibes);
+    font-size: 38px;
+    font-family: var(--league-spartan);
     position: relative;
     z-index: 1;
     background: transparent;
@@ -183,11 +191,11 @@ body{
 }
 .product {
     background: white;
-    padding: 20px;
+    padding: 14px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 230px;
     margin: 15px auto;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
@@ -199,37 +207,193 @@ body{
 .product img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+}
+.card-slider {
+    width: 100%;
+    margin-bottom: 12px;
+}
+.card-slider-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.card-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    margin-bottom: 0;
+}
+.card-slide.active {
+    opacity: 1;
+}
+.card-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+.card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #d3c4bc;
+    cursor: pointer;
+}
+.card-dot.active {
+    background: var(--mocha-muse);
+}
+.model-visual {
+    width: 100%;
+    min-height: 160px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 14px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+.theme-classic {
+    background: linear-gradient(135deg, #9a7f71, #d7c4b8);
+}
+.theme-royal {
+    background: linear-gradient(135deg, #43506f, #8ea0bd);
+}
+.theme-floral {
+    background: linear-gradient(135deg, #b8828d, #e3bec6);
+}
+.theme-festive {
+    background: linear-gradient(135deg, #7f8a6a, #c5cfb5);
+}
+.model-format {
+    display: block;
+    color: #6c5f59;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 12px;
 }
 .product:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 .product p {
-    font-size: 28px;
+    font-size: 20px;
     color: #a47864;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 300;
+    line-height: 1.1;
+    min-height: 44px;
+    max-width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: balance;
+}
+.model-format {
+    font-size: 13px;
 }
 .product .btn {
     background: var(--cafecito);
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
 }
 .product .btn:hover {
-    background: #a47864;
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(184, 106, 53, 0.18);
+}
+.product .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+.product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+.product-actions-compact {
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.product-actions .btn {
+    flex: 0 0 auto;
+    min-width: 92px;
+    text-align: center;
+}
+.product-actions .btn-demo {
+    order: 1;
+}
+.product-actions .btn-buy {
+    order: 2;
+    background: var(--mocha-muse);
+}
+.product-actions .btn-buy:hover {
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
+}
+.product-actions .btn-demo {
+    background: var(--cafecito);
+}
+.product-actions .btn-demo:hover {
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
+}
+.empty-models {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: var(--mocha-muse);
+    padding: 30px 10px;
+}
+.product-actions .btn-disabled,
+.product-actions .btn-disabled:hover {
+    background: #beb9b5;
+    color: #f6f4f2;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 /* Por defecto: color original */
 .responsive-icon {
     filter: none;
 }
 /* ---------------------- RESPONSIVE ---------------------- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .navbar {
         padding: 15px 20px;
     }
@@ -272,13 +436,22 @@ body{
         text-align: center;
     }
     .product-container {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        max-width: 520px;
     }
     .products {
         padding: 50px 10px;
     }
     .product {
-        width: 90%;
+        width: 100%;
         margin: auto;
+    }
+    .product-actions {
+        flex-direction: column;
+    }
+    .demo-note {
+        margin-top: 0;
     }
 }

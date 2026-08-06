@@ -10,6 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
       orderItems.innerHTML = "";
       let total = 0;
       let detectedCurrency = null;
+
+      if (!cart.length) {
+        orderItems.innerHTML = `
+          <li class="empty-cart">
+            <strong>Tu carrito está vacío</strong>
+            Regresa al carrito para agregar un modelo antes de continuar.
+          </li>
+        `;
+        orderTotal.textContent = "Q0.00";
+        if (payNowButton) payNowButton.disabled = true;
+        return;
+      }
+
+      if (payNowButton) payNowButton.disabled = false;
   
       cart.forEach(item => {
         const price = Number(item.price ?? item.priceQ ?? item.priceUSD);
@@ -27,8 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
         const li = document.createElement("li");
         li.innerHTML = `
-          <img src="${item.image ?? ''}" alt="${item.name}" style="width: 260px; height: auto;">
-          ${item.name} x${item.quantity} - ${usedCurrency === 'USD' ? '$' : 'Q'}${subtotal.toFixed(2)}
+          <img src="${item.image ?? ''}" alt="${item.name}">
+          <div>
+            <strong>${item.name}</strong><br>
+            ${item.name} x${item.quantity} - ${usedCurrency === 'USD' ? '$' : 'Q'}${subtotal.toFixed(2)}
+          </div>
         `;
         orderItems.appendChild(li);
   
@@ -194,9 +211,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 });
-
-//extra tip 
-const uniqueCurrencies = new Set(cart.map(item => item.currency));
-if (uniqueCurrencies.size > 1) {
-  alert("Hay productos con distinta moneda. Por favor verifica tu carrito.");
-}

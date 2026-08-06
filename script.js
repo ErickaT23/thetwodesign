@@ -137,6 +137,65 @@ document.addEventListener("DOMContentLoaded", function () {
         }, index * 150);
     });
 
+    const featuredCarousels = document.querySelectorAll("[data-featured-carousel]");
+
+    featuredCarousels.forEach((carousel) => {
+        const featuredSlides = carousel.querySelectorAll(".featured-slide");
+        const featuredDots = carousel.querySelectorAll(".featured-dot");
+        let currentFeaturedSlide = 0;
+
+        function showFeaturedSlide(index) {
+            featuredSlides.forEach((slide, slideIndex) => {
+                slide.classList.toggle("active", slideIndex === index);
+            });
+
+            featuredDots.forEach((dot, dotIndex) => {
+                dot.classList.toggle("active", dotIndex === index);
+            });
+        }
+
+        function nextFeaturedSlide() {
+            currentFeaturedSlide = (currentFeaturedSlide + 1) % featuredSlides.length;
+            showFeaturedSlide(currentFeaturedSlide);
+        }
+
+        if (featuredSlides.length > 0 && featuredDots.length > 0) {
+            featuredDots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    currentFeaturedSlide = index;
+                    showFeaturedSlide(currentFeaturedSlide);
+                });
+            });
+
+            showFeaturedSlide(currentFeaturedSlide);
+            setInterval(nextFeaturedSlide, 5000);
+        }
+    });
+
+    const promoPopup = document.getElementById("promo-popup");
+    const promoPopupClose = document.getElementById("promo-popup-close");
+
+    if (promoPopup) {
+        window.setTimeout(() => {
+            promoPopup.classList.add("active");
+            promoPopup.setAttribute("aria-hidden", "false");
+        }, 700);
+
+        if (promoPopupClose) {
+            promoPopupClose.addEventListener("click", () => {
+                promoPopup.classList.remove("active");
+                promoPopup.setAttribute("aria-hidden", "true");
+            });
+        }
+
+        promoPopup.addEventListener("click", (event) => {
+            if (event.target === promoPopup) {
+                promoPopup.classList.remove("active");
+                promoPopup.setAttribute("aria-hidden", "true");
+            }
+        });
+    }
+
     // ---------------------- MANEJO DEL CARRITO ----------------------
     let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
     document.getElementById("cart-count").innerText = cartCount;
@@ -153,62 +212,6 @@ cartButtons.forEach(button => {
         }
     });
 });
-});
-//--- TESTIMONIOS ---
-document.addEventListener("DOMContentLoaded", function () {
-    const testimonials = document.querySelectorAll(".testimonial");
-    const prevButton = document.querySelector(".testimonial-prev");
-    const nextButton = document.querySelector(".testimonial-next");
-    let currentIndex = 0;
-    const totalTestimonials = testimonials.length;
-    let interval;
-
-    // Función para actualizar la visibilidad del testimonio
-    function updateTestimonials() {
-        testimonials.forEach((testimonial, index) => {
-            testimonial.classList.remove("active");
-            if (index === currentIndex) {
-                testimonial.classList.add("active");
-            }
-        });
-    }
-
-    // Función para avanzar al siguiente testimonio
-    function nextTestimonial() {
-        currentIndex = (currentIndex + 1) % totalTestimonials;
-        updateTestimonials();
-    }
-
-    // Función para retroceder al testimonio anterior
-    function prevTestimonial() {
-        currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
-        updateTestimonials();
-    }
-
-    // Iniciar el carrusel automático
-    function startAutoSlide() {
-        interval = setInterval(nextTestimonial, 5000);
-    }
-
-    // Detener el carrusel automático cuando el usuario interactúa
-    function stopAutoSlide() {
-        clearInterval(interval);
-        startAutoSlide(); // Reiniciar el intervalo después de una interacción
-    }
-
-    // Event Listeners para las flechas
-    prevButton.addEventListener("click", function () {
-        prevTestimonial();
-        stopAutoSlide();
-    });
-
-    nextButton.addEventListener("click", function () {
-        nextTestimonial();
-        stopAutoSlide();
-    });
-
-    // Iniciar el carrusel automático
-    startAutoSlide();
 });
 //----FAQ---//
 document.addEventListener("DOMContentLoaded", function () {
@@ -231,27 +234,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 //--FORMULARIO DE CONTACTO---//
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
+const contactForm = document.getElementById("contact-whatsapp-form");
 
-    let form = this;
-    let formData = new FormData(form);
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-            "Accept": "application/json"
-        }
-    }).then(response => {
-        if (response.ok) {
-            alert("Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.");
-            form.reset();
-        } else {
-            alert("Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.");
-        }
-    }).catch(() => alert("Error de conexión"));
-});
+        const whatsappNumber = "50236011737";
+        const formData = new FormData(contactForm);
+        const name = (formData.get("name") || "").toString().trim();
+        const phone = (formData.get("phone") || "").toString().trim();
+        const event = (formData.get("event") || "").toString().trim();
+        const message = (formData.get("message") || "").toString().trim();
+
+        const whatsappMessage = [
+            "Hola Two Design, quiero más información.",
+            "",
+            `Nombre: ${name}`,
+            `Teléfono: ${phone}`,
+            `Evento: ${event}`,
+            `Mensaje: ${message}`
+        ].join("\n");
+
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        contactForm.reset();
+    });
+}
 //efecto scroll reveal//
 AOS.init({
     duration: 1000, // Duración de animaciones
@@ -279,8 +288,3 @@ document.addEventListener("DOMContentLoaded", updateCartCount);
             product.style.transform = "translateY(0)";
         }, index * 150);
     });
-
-
-
-
-

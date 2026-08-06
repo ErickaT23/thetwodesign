@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compra</title>
+    <title>Finalizar compra | Two Design</title>
     <link rel="stylesheet" href="/cart.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,58 +52,57 @@
         </nav>
     <main>
         <div class="checkout-container">
-           <section class="order-summary">
-             <div class="checkout-header">
-                <h2>Resumen del Pedido</h2>
-                <a href="cart.html" class="back-link">⬅ Volver al carrito</a>
-             </div>
-             <div class="order-product">
-                <ul id="order-items"></ul>
-                <p>Total: <span id="order-total">0.00</span></p>
-             </div>
-           </section>
-              <!-- Checkout Form SIN facturación -->
+            <section class="order-summary">
+                <div class="checkout-header">
+                    <h2>Resumen del pedido</h2>
+                    <p class="checkout-intro">Confirma tus modelos seleccionados y completa tus datos para continuar por WhatsApp.</p>
+                    <a href="/cart.html" class="back-link">Volver al carrito</a>
+                </div>
+                <div class="order-product">
+                    <ul id="order-items"></ul>
+                </div>
+                <div class="checkout-total-card">
+                    <p>Total <span id="order-total">Q0.00</span></p>
+                </div>
+            </section>
             <section class="checkout-form">
-             <div class="contactoinfo">
-                <h2>Datos de Contacto</h2>
-                 <!-- Nombre -->
-                <label>Nombre: <input type="text" id="name" required></label>
-                 <!-- Teléfono y Email en la misma línea -->
-                 <div class="contact-row">
-                    <label>Teléfono: <input type="text" id="phone" required></label>
-                    <label>Email: <input type="email" id="email" required></label>
-                 </div>
-                      <!-- País -->
-                      <label>País: <input type="text" id="country" required></label>
-             </div>
-            <div class="paymentinfo">
-             <h2>Método de Pago</h2>
-            <label>
-             <input type="radio" name="payment-method" value="transferencia" checked>
-             Transferencia Bancaria
-            </label>
-            <div class="payment-details active" id="transferencia-info">
-              Le compartiremos nuestra cuenta bancaria local para realizar la transferencia. No olvides enviar el comprobante.
-            </div>
-            <label>
-                <input type="radio" name="payment-method" value="tarjeta">
-                Tarjeta <img src="/wedding/web/Modelo-1/media/visa+mastercard.png">
-            </label>
-            <div class="payment-details" id="tarjeta-info">
-                Le estaremos enviando un link de pago para que pueda completar su pago. No olvide enviar el comprobante.
-            </div>
-            <label>
-                <input type="radio" name="payment-method" value="paypal">
-                Paypal <img src="/wedding/web/Modelo-1/media/paypal.png">
-            </label>
-            <div class="payment-details" id="paypal-info">
-                Compartiremos nuestro código de Paypal para que puedas completar el pago. No olvide enviar el comprobante.
-            </div>
+                <div class="contactoinfo checkout-card-block">
+                    <h2>Datos de contacto</h2>
+                    <label>Nombre<input type="text" id="name" required></label>
+                    <div class="contact-row">
+                        <label>Teléfono<input type="text" id="phone" required></label>
+                        <label>Email<input type="email" id="email" required></label>
+                    </div>
+                    <label>País<input type="text" id="country" required></label>
+                </div>
+                <div class="paymentinfo checkout-card-block">
+                    <h2>Método de pago</h2>
+                    <label>
+                        <input type="radio" name="payment-method" value="transferencia" checked>
+                        Transferencia Bancaria
+                    </label>
+                    <div class="payment-details active" id="transferencia-info">
+                        Le compartiremos nuestra cuenta bancaria local para realizar la transferencia. No olvides enviar el comprobante.
+                    </div>
+                    <label>
+                        <input type="radio" name="payment-method" value="tarjeta">
+                        Tarjeta <img src="/wedding/web/Modelo-1/media/visa+mastercard.png" alt="Tarjetas Visa y Mastercard">
+                    </label>
+                    <div class="payment-details" id="tarjeta-info">
+                        Le estaremos enviando un link de pago para que pueda completar su pago. No olvides enviar el comprobante.
+                    </div>
+                    <label>
+                        <input type="radio" name="payment-method" value="paypal">
+                        PayPal <img src="/wedding/web/Modelo-1/media/paypal.png" alt="PayPal">
+                    </label>
+                    <div class="payment-details" id="paypal-info">
+                        Compartiremos nuestro código de PayPal para que puedas completar el pago. No olvides enviar el comprobante.
+                    </div>
+                </div>
+                <button id="pay-now">Pagar ahora</button>
+            </section>
         </div>
-        <button id="pay-now">Pagar Ahora</button>
-             </section>
-       </div>
-   </main>
+    </main>
      <!-- Footer -->
      <footer>
         <div class="footer-container">

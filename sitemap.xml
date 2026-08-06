@@ -5,7 +5,6 @@
   <url><loc>https://www.thetwodesign.com/</loc></url>
   <url><loc>https://www.thetwodesign.com/cart.html</loc></url>
   <url><loc>https://www.thetwodesign.com/checkout.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/contact.html</loc></url>
 
   <!-- WEDDINGS -->
   <url><loc>https://www.thetwodesign.com/wedding/wedding.html</loc></url>
@@ -18,19 +17,21 @@
 
   <!-- QUINCEAÑERAS -->
   <url><loc>https://www.thetwodesign.com/quinceanera/quinceanera.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/quinceanera/web/modelo-bella.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/quinceanera/web/modelo-blossom.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/quinceanera/web/modelo-enebro.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/quinceanera/web/modelo-mariposa.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/quinceanera/web/modelo-rodeo.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/quinceanera/web/Modelo-1/modelo-rosas.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/quinceanera/web/Modelo-2/modelo-rodeo.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/quinceanera/web/Modelo-3/modelo-mariposa.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/quinceanera/web/Modelo-4/modelo-blossom.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/quinceanera/web/Modelo-5/modelo-cenicienta.html</loc></url>
   <url><loc>https://www.thetwodesign.com/quinceanera/video/modelo-mariposa.html</loc></url>
   <url><loc>https://www.thetwodesign.com/quinceanera/pdf/modelo-olivo.html</loc></url>
   <url><loc>https://www.thetwodesign.com/quinceanera/imagen/modelo-pink.html</loc></url>
 
   <!-- CELEBRACIONES -->
   <url><loc>https://www.thetwodesign.com/celebraciones/celebraciones.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/celebraciones/web/modelo-sun.html</loc></url>
-  <url><loc>https://www.thetwodesign.com/celebraciones/web/modelo-fabulous.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/celebraciones/web/Modelo-1/modelo-sun.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/celebraciones/web/Modelo-2/modelo-fabulous.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/celebraciones/web/Modelo-3/modelo-black.html</loc></url>
+  <url><loc>https://www.thetwodesign.com/celebraciones/web/Modelo-4/modelo-gatsby.html</loc></url>
   <url><loc>https://www.thetwodesign.com/celebraciones/video/modelo-golden.html</loc></url>
   <url><loc>https://www.thetwodesign.com/celebraciones/pdf/modelo-sweet-pink.html</loc></url>
   <url><loc>https://www.thetwodesign.com/celebraciones/imagen/modelo-bautizo.html</loc></url>
@@ -38,4 +39,3 @@
   <url><loc>https://www.thetwodesign.com/celebraciones/imagen/modelo-babyshower.html</loc></url>
 
 </urlset>
-

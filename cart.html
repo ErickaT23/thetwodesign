@@ -52,14 +52,19 @@
         </nav>
     <main>
         <section class="cart">
-            <div class="cart-header">
-                <h2>Carrito de compras</h2>
-                <a href="/index.html" class="back-link">⬅ Volver a la tienda</a>
-            </div>
-            <div class="cart-products">
-            <ul id="cart-items"></ul>
-            <p>Total <span id="total-price">0.00</span></p>
-            <button class="btn-checkout" id="checkout">Finalizar Compra</button>
+            <div class="cart-shell">
+                <div class="cart-header">
+                    <h2>Carrito de compras</h2>
+                    <p class="cart-intro">Revisa tus modelos seleccionados antes de continuar al checkout.</p>
+                    <a href="/index.html" class="back-link">Volver a la tienda</a>
+                </div>
+                <div class="cart-products">
+                    <ul id="cart-items" class="cart-items"></ul>
+                    <div class="cart-summary">
+                        <p class="cart-total">Total <span id="total-price">Q0.00</span></p>
+                        <button class="btn-checkout" id="checkout">Finalizar compra</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

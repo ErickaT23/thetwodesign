@@ -17,6 +17,11 @@
     box-sizing: border-box;
     font-family: "League Spartan", serif;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 /* ---------------------- NAVBAR ---------------------- */
 .navbar {
     position: absolute;
@@ -97,6 +102,7 @@ footer {
     background-color: var(--verde);
     width: 100%;
     height: 100%;
+    margin-top: auto;
     padding: 5px;
 }
 .footer-container {
@@ -521,4 +527,3 @@ label {
         display: block; /* Muestra el contador en responsive */
     }
 }
-

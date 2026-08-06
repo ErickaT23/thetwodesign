@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elige tu evento | Two Design</title>
+    <meta name="description" content="Elige si quieres ver modelos para boda, XV años o celebraciones en Two Design.">
+    <link rel="stylesheet" href="/wedding/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/index.html">
+            <img src="/images/logo-negro.png" alt="Logo de Two Design">
+        </a>
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/wedding/wedding.html">Bodas</a></li>
+            <li><a href="/quinceanera/quinceanera.html">Quinceañera</a></li>
+            <li><a href="/celebraciones/celebraciones.html">Celebraciones</a></li>
+            <li><a href="/cart.html" class="cart-container">
+                <lord-icon src="https://cdn.lordicon.com/ggirntso.json"
+                 class="responsive-icon"
+                 trigger="loop"
+                 stroke="light" colors="primary:#1111,secondary:#1111"
+                 style="width:40px;height:40px"></lord-icon>
+                <span id="cart-count" class="cart-badge">0</span>
+            </a></li>
+            <li><a href="/index.html#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="wedding-packages">
+        <h2>Elige tu evento</h2>
+        <p>Selecciona la categoría que quieres explorar y descubre los modelos disponibles.</p>
+        <div class="wedding-packages-grid">
+            <article class="wedding-package-card event-card-boda" data-aos="zoom-in">
+                <span class="wedding-package-tag tag-template">Colección</span>
+                <h3>Boda</h3>
+                <p>Diseños elegantes para contar el inicio de su historia.</p>
+                <a href="/wedding/wedding.html" class="wedding-package-btn">Ver modelos de boda</a>
+            </article>
+            <article class="wedding-package-card event-card-xv" data-aos="zoom-in">
+                <span class="wedding-package-tag tag-custom">Colección</span>
+                <h3>XV años</h3>
+                <p>Modelos especiales para una celebración inolvidable.</p>
+                <a href="/quinceanera/quinceanera.html" class="wedding-package-btn">Ver modelos de XV</a>
+            </article>
+            <article class="wedding-package-card event-card-celebracion" data-aos="zoom-in">
+                <span class="wedding-package-tag tag-bespoke">Colección</span>
+                <h3>Celebración</h3>
+                <p>Invitaciones versátiles para compartir cada momento especial.</p>
+                <a href="/celebraciones/celebraciones.html" class="wedding-package-btn">Ver modelos de celebración</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <h4>Síguenos</h4>
+            <div class="icons">
+                <a href="https://www.instagram.com/thetwodesign/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/thetwodesign/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Two Design. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/50236011737" target="_blank" class="whatsapp-bubble" data-aos="zoom-in">
+        <lord-icon
+            src="https://cdn.lordicon.com/dnphlhar.json"
+            stroke="light"
+            colors="primary:#fff,secondary:#fff"
+            style="width:50px;height:50px">
+        </lord-icon>
+    </a>
+
+    <script src="/models-data.js"></script>
+    <script src="/model-renderer.js"></script>
+    <script src="/wedding/script.js"></script>
+</body>
+</html>

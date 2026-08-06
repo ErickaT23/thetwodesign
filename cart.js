@@ -13,6 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
         let totalItems = 0;
         let currency = 'Q'; // Definir moneda predeterminada (Quetzales)
 
+        if (!cart.length) {
+            cartItemsList.innerHTML = `
+                <li class="empty-cart">
+                    <strong>Tu carrito está vacío</strong>
+                    Agrega un modelo para continuar con tu compra.
+                </li>
+            `;
+            totalPriceEl.textContent = "Q0.00";
+            if (checkoutBtn) checkoutBtn.disabled = true;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount(0);
+            return;
+        }
+
+        if (checkoutBtn) checkoutBtn.disabled = false;
+
         cart.forEach((item, index) => {
             const li = document.createElement("li");
             li.classList.add("cart-item");
@@ -20,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             li.innerHTML = `
                 <img src="${item.image}" alt="${item.name}" class="cart-img">
                 <div class="cart-info">
-                    <p class="cart-name">${item.name}</p> <!-- Aquí mostramos el paquete -->
+                    <p class="cart-name">${item.name}</p>
                     <p class="cart-price">
                     ${item.currency === 'USD' ? '$' : 'Q'}
                     ${item.price ? item.price.toFixed(2) : '0.00'}
@@ -31,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>${item.quantity}</span>
                     <button class="increase" data-index="${index}">➕</button>
                 </div>
-                <button class="remove" data-index="${index}">❌</button>
+                <button class="remove" data-index="${index}">Eliminar</button>
             `;
 
             cartItemsList.appendChild(li);
@@ -80,9 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Redirigir al checkout
-    checkoutBtn.addEventListener("click", () => {
-        window.location.href = "checkout.html";
-    });
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", () => {
+            window.location.href = "checkout.html";
+        });
+    }
 
     updateCartDisplay();
     updateCartCount();
@@ -212,5 +230,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCartCount();
 });
-
-

@@ -141,11 +141,11 @@ body {
     font-family: var(--league-spartan);
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: 300;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 14px;
     color: white;
     background: var(--cafecito);
-    padding: 10px 20px;
+    padding: 8px 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -382,11 +382,11 @@ body {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14px;
     color: var(--white);
     background: var(--cafecito);
-    padding: 9px 12px;
+    padding: 8px 10px;
     border-radius: 8px;
     transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -477,13 +477,14 @@ body {
     align-items: center;
     justify-content: center;
     width: fit-content;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--mocha-muse);
-    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(111, 90, 80, 0.82);
+    padding: 4px 8px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(111, 90, 80, 0.14);
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(111, 90, 80, 0.08);
+    letter-spacing: 0.15px;
 }
 .package-card ul {
     list-style: disc;
@@ -497,11 +498,11 @@ body {
     align-self: flex-start;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 300;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 14px;
     color: white;
     background: var(--mocha-muse);
-    padding: 10px 20px;
+    padding: 8px 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -1063,9 +1064,9 @@ body {
     background: var(--cafecito);
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 300;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     cursor: pointer;

@@ -2,13 +2,18 @@
 :root {
     --league-spartan: 'League Spartan', sans-serif;
     --great-vibes: 'Great Vibes', cursive;
-    --mocha-muse: #a47864;
+    --mocha-muse: #6f5a50;
     --white: #fff;
-    --orange: orange;
+    --orange: #b86a35;
     --purple: #7e5e91;
-    --cafecito: #cab7af;
-    --verde:#aca17d;
+    --cafecito: #b49b90;
+    --verde:#7f8a6a;
     --rosita: #d2a99f;
+    --heading-tone: #5e4c43;
+    --text-strong: #3f3531;
+    --cta-hover: #9e877c;
+    --focus-ring: rgba(180, 155, 144, 0.35);
+    --cta-hover-text: #fffaf6;
 }
 /* Reset básico */
 * {
@@ -65,7 +70,7 @@
     position: absolute;
     top: -5px;
     right: -10px;
-    background: orange;
+    background: var(--cafecito);
     color: white;
     font-size: 12px;
     font-weight: bold;
@@ -96,7 +101,7 @@ footer {
     position: relative;
     color: white;
     text-align: center;
-    background-color: var(--verde);
+    background-color: var(--cafecito);
     width: 100%;
     height: 100%;
     margin-top: auto;
@@ -129,7 +134,7 @@ footer {
     transition: color 0.3s ease-in-out;
 }
 .icons a:hover {
-    color: orange;
+    color: var(--mocha-muse);
 }
 .footer-bottom {
     margin-top: 20px;
@@ -231,14 +236,14 @@ body{
 }
 .product h3 {
     font-size: 22px;
-    color: var(--orange);
+    color: var(--mocha-muse);
     margin-bottom: 10px;
     font-weight: 300;
     text-transform: uppercase;
 }
 .product p {
     font-size: 18px;
-    color: #a47864;
+    color: var(--mocha-muse);
     font-weight: bold;
     margin-bottom: 15px;
     font-weight: 300;
@@ -253,14 +258,23 @@ body{
 .product .btn {
     background: var(--cafecito);
     color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 10px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
 }
 .product .btn:hover {
-    background: #a47864;
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(180, 155, 144, 0.24);
+}
+.product .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus-ring);
 }
 .product-actions {
     display: flex;
@@ -273,6 +287,10 @@ body{
 }
 .product-actions .btn-buy {
     background: var(--mocha-muse);
+}
+.product-actions .btn-buy:hover {
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
 }
 .demo-note {
     width: 100%;
@@ -336,9 +354,10 @@ body{
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(51, 37, 30, 0.08);
     padding: 28px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 14px;
 }
 .wedding-package-tag {
@@ -382,6 +401,7 @@ body{
     font-weight: 300;
     line-height: 1.4;
     flex-grow: 1;
+    text-align: center;
 }
 .wedding-package-price {
     display: inline-flex;
@@ -389,12 +409,12 @@ body{
     justify-content: center;
     width: fit-content;
     font-size: 18px;
-    color: var(--orange);
+    color: var(--mocha-muse);
     font-weight: 600;
     margin: 0 0 12px;
     padding: 8px 12px;
     border-radius: 999px;
-    background: #f8eadf;
+    background: rgba(255, 255, 255, 0.72);
 }
 .wedding-package-description {
     color: #6b5d57;
@@ -415,15 +435,16 @@ body{
     display: inline-flex;
     width: fit-content;
     justify-content: center;
+    align-self: center;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     background: var(--mocha-muse);
     color: #fff;
     border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 300;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-weight: 400;
     transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .wedding-package-btn:hover {

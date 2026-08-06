@@ -98,12 +98,6 @@ function initCardSliders(container) {
 
         showSlide(0);
 
-        if (slides.length > 1) {
-            window.setInterval(() => {
-                const nextIndex = (currentIndex + 1) % slides.length;
-                showSlide(nextIndex);
-            }, 3500);
-        }
     });
 }
 

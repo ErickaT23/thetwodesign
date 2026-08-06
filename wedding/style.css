@@ -324,59 +324,64 @@ body{
     margin-bottom: 26px;
 }
 .wedding-packages-grid {
-    max-width: 1050px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 24px;
 }
 .wedding-package-card {
-    background: #fff;
-    border: 1px solid rgba(202, 183, 175, 0.45);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 242, 237, 0.98) 100%);
+    border: 1px solid rgba(111, 90, 80, 0.18);
     border-radius: 12px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-    padding: 20px;
-    text-align: center;
+    box-shadow: 0 10px 25px rgba(51, 37, 30, 0.08);
+    padding: 28px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 .wedding-package-tag {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    font-size: 12px;
+    width: fit-content;
+    font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
-    background: #efe4df;
-    color: #7a5f53;
+    letter-spacing: 0.6px;
     border-radius: 999px;
-    padding: 6px 10px;
-    margin-bottom: 8px;
+    padding: 5px 9px;
+    border: 1px solid currentColor;
+}
+.wedding-package-tag i {
+    font-size: 11px;
 }
 .wedding-package-tag.tag-template {
-    background: #efe7f7;
-    color: #625083;
+    background: linear-gradient(135deg, #f3ebe6, #e4d3c8);
+    color: #6f5a50;
 }
 .wedding-package-tag.tag-custom {
-    background: #e9f5ed;
-    color: #3f7354;
+    background: linear-gradient(135deg, #f5eeea, #dfcfc5);
+    color: #8c6d5d;
 }
 .wedding-package-tag.tag-bespoke {
-    background: #f8eadf;
-    color: #8b5e41;
+    background: linear-gradient(135deg, #f7efe9, #d9c0b1);
+    color: #a46f51;
 }
 .wedding-package-card h3 {
     font-size: 34px;
     color: var(--mocha-muse);
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-weight: 500;
     letter-spacing: 0.3px;
 }
 .wedding-package-card p {
-    font-size: 18px;
-    color: var(--cafecito);
+    font-size: 20px;
+    color: #6b615d;
     font-weight: 300;
-    font-style: italic;
-    line-height: 1.35;
-    margin-bottom: 12px;
+    line-height: 1.4;
+    flex-grow: 1;
 }
 .wedding-package-price {
     display: inline-flex;
@@ -406,76 +411,52 @@ body{
     text-align: left;
 }
 .wedding-package-btn {
-    margin-top: 14px;
+    margin-top: auto;
     display: inline-flex;
-    width: 100%;
+    width: fit-content;
     justify-content: center;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     background: var(--mocha-muse);
     color: #fff;
     border-radius: 8px;
-    padding: 11px 12px;
-    font-size: 15px;
-    font-weight: 400;
-    transition: background-color 0.25s ease, transform 0.25s ease;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 300;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .wedding-package-btn:hover {
-    background: #7b5b4d;
+    background: #5f4b42;
     transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(180, 155, 144, 0.24);
 }
 .wedding-package-tag.tag-template ~ .wedding-package-btn {
-    background: #625083;
+    background: linear-gradient(135deg, #7f685d, #6f5a50);
 }
 .wedding-package-tag.tag-template ~ .wedding-package-btn:hover {
-    background: #4f406b;
+    background: #5f4b42;
 }
 .wedding-package-tag.tag-custom ~ .wedding-package-btn {
-    background: #3f7354;
+    background: linear-gradient(135deg, #a47f6c, #8c6d5d);
 }
 .wedding-package-tag.tag-custom ~ .wedding-package-btn:hover {
-    background: #325c43;
+    background: #785d50;
 }
 .wedding-package-tag.tag-bespoke ~ .wedding-package-btn {
-    background: #8b5e41;
+    background: linear-gradient(135deg, #ba825f, #a46f51);
 }
 .wedding-package-tag.tag-bespoke ~ .wedding-package-btn:hover {
-    background: #734d35;
+    background: #905f46;
 }
 .event-card-boda h3 {
     color: #6f5a50;
 }
-.event-card-boda .wedding-package-btn {
-    background: #625083;
-}
-.event-card-boda .wedding-package-btn:hover {
-    background: #4f406b;
-}
 .event-card-xv h3 {
-    color: #8b6282;
-}
-.event-card-xv .wedding-package-tag.tag-custom {
-    background: #f2e8f4;
-    color: #8b6282;
-}
-.event-card-xv .wedding-package-btn {
-    background: #8b6282;
-}
-.event-card-xv .wedding-package-btn:hover {
-    background: #75516d;
+    color: #8c6d5d;
 }
 .event-card-celebracion h3 {
-    color: #73815b;
-}
-.event-card-celebracion .wedding-package-tag.tag-bespoke {
-    background: #edf3e4;
-    color: #73815b;
-}
-.event-card-celebracion .wedding-package-btn {
-    background: #73815b;
-}
-.event-card-celebracion .wedding-package-btn:hover {
-    background: #62704d;
+    color: #a46f51;
 }
 .products-xv .product .btn {
     background: #8b6282;
@@ -555,6 +536,17 @@ body{
     .wedding-packages-grid {
         grid-template-columns: 1fr;
     }
+    .wedding-package-card {
+        padding: 18px;
+        gap: 10px;
+    }
+    .wedding-package-card h3 {
+        font-size: 24px;
+    }
+    .wedding-package-card p {
+        font-size: 16px;
+        line-height: 1.25;
+    }
     .wedding-models h2 {
         font-size: 44px;
     }
@@ -562,6 +554,12 @@ body{
         font-size: 20px;
     }
     .wedding-package-btn {
+        width: 100%;
         font-size: 14px;
+        padding: 8px 10px;
+    }
+    .wedding-package-tag {
+        font-size: 9px;
+        padding: 4px 8px;
     }
 }

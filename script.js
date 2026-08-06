@@ -60,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
         item.style.padding = "10px 15px"; // Agregar más espacio
     });
     // ---------------------- CARRUSEL ----------------------
+    const heroSlideInterval = 8500;
+    const featuredSlideInterval = 9000;
     let currentSlide = 0;
     const slides = document.querySelectorAll(".carousel-item");
     const indicatorsContainer = document.querySelector(".carousel-indicators");
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slide.style.transform = `translateX(${i * 100}%)`;
         });
         showSlide(currentSlide);
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, heroSlideInterval);
     }
 
     // Event listeners para botones
@@ -168,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             showFeaturedSlide(currentFeaturedSlide);
-            setInterval(nextFeaturedSlide, 5000);
+            setInterval(nextFeaturedSlide, featuredSlideInterval);
         }
     });
 

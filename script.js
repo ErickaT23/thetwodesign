@@ -3,40 +3,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".navbar ul");
 
-    menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("active");
-        if (menu.classList.contains("active")) {
-            menu.style.width = "100vw"; // Ocupa todo el ancho de la pantalla
-            menu.style.display = "flex";
-            menu.style.flexDirection = "column";
-            menu.style.alignItems = "center";
-            menu.style.gap = "10px"; // Espacio entre opciones
-            menu.style.padding = "20px 0";
-            menu.style.position = "absolute";
-            menu.style.top = "100%"; // Justo debajo de la barra de navegación
-            menu.style.left = "0";
-            menu.style.background = "rgba(72, 70, 70, 0.7)"; // Fondo más claro
-            menu.style.borderRadius = "0 0 10px 10px";
-            menu.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
-        } else {
-            menu.style.width = "";
-            menu.style.display = "";
-            menu.style.flexDirection = "";
-            menu.style.alignItems = "";
-            menu.style.gap = "";
-            menu.style.padding = "";
-            menu.style.position = "";
-            menu.style.top = "";
-            menu.style.left = "";
-            menu.style.background = "";
-            menu.style.borderRadius = "";
-            menu.style.boxShadow = "";
-        }
-    });
+    if (menuToggle && menu) {
+        menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            if (menu.classList.contains("active")) {
+                menu.style.width = "100vw";
+                menu.style.display = "flex";
+                menu.style.flexDirection = "column";
+                menu.style.alignItems = "center";
+                menu.style.gap = "10px";
+                menu.style.padding = "20px 0";
+                menu.style.position = "absolute";
+                menu.style.top = "100%";
+                menu.style.left = "0";
+                menu.style.background = "rgba(72, 70, 70, 0.7)";
+                menu.style.borderRadius = "0 0 10px 10px";
+                menu.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
+            } else {
+                menu.style.width = "";
+                menu.style.display = "";
+                menu.style.flexDirection = "";
+                menu.style.alignItems = "";
+                menu.style.gap = "";
+                menu.style.padding = "";
+                menu.style.position = "";
+                menu.style.top = "";
+                menu.style.left = "";
+                menu.style.background = "";
+                menu.style.borderRadius = "";
+                menu.style.boxShadow = "";
+            }
+        });
+    }
 
     // Cerrar el menú cuando se hace click fuera de él
     document.addEventListener("click", (event) => {
-        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+        if (menuToggle && menu && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
             menu.classList.remove("active");
             menu.style.width = "";
             menu.style.display = "";
@@ -66,16 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".carousel-item");
     const indicatorsContainer = document.querySelector(".carousel-indicators");
     const carousel = document.querySelector(".carousel");
-    const prevButton = document.createElement("button");
-    const nextButton = document.createElement("button");
+    let prevButton = null;
+    let nextButton = null;
 
-    // Configurar botones de navegación
-    prevButton.classList.add("carousel-prev");
-    nextButton.classList.add("carousel-next");
-    prevButton.innerHTML = "&#10094;"; // Flecha izquierda
-    nextButton.innerHTML = "&#10095;"; // Flecha derecha
-    carousel.appendChild(prevButton);
-    carousel.appendChild(nextButton);
+    if (carousel && slides.length > 1) {
+        prevButton = document.createElement("button");
+        nextButton = document.createElement("button");
+        prevButton.classList.add("carousel-prev");
+        nextButton.classList.add("carousel-next");
+        prevButton.innerHTML = "&#10094;";
+        nextButton.innerHTML = "&#10095;";
+        carousel.appendChild(prevButton);
+        carousel.appendChild(nextButton);
+    }
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
@@ -120,12 +125,16 @@ document.addEventListener("DOMContentLoaded", function () {
             slide.style.transform = `translateX(${i * 100}%)`;
         });
         showSlide(currentSlide);
-        setInterval(nextSlide, heroSlideInterval);
+        if (slides.length > 1) {
+            setInterval(nextSlide, heroSlideInterval);
+        }
     }
 
     // Event listeners para botones
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
+    if (nextButton && prevButton) {
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
+    }
 
     // ---------------------- ANIMACIONES DE ENTRADA ----------------------
     const products = document.querySelectorAll(".product");
@@ -200,7 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ---------------------- MANEJO DEL CARRITO ----------------------
     let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
-    document.getElementById("cart-count").innerText = cartCount;
+    const cartBadge = document.getElementById("cart-count");
+    if (cartBadge) cartBadge.innerText = cartCount;
 
     const cartButtons = document.querySelectorAll(".btn");
 cartButtons.forEach(button => {
@@ -210,7 +220,7 @@ cartButtons.forEach(button => {
             event.preventDefault();
             cartCount++;
             localStorage.setItem("cartCount", cartCount);
-            document.getElementById("cart-count").innerText = cartCount;
+            if (cartBadge) cartBadge.innerText = cartCount;
         }
     });
 });

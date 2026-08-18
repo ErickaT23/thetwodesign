@@ -60,6 +60,26 @@ body {
     text-transform: uppercase;
     position: relative;
 }
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    opacity: 0;
+    transform: scaleX(0.75);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.navbar ul li a:hover::after,
+.navbar ul li a.nav-link-active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+.navbar ul li a.nav-link-active {
+    font-weight: 200;
+}
 /* Iconos de Lordicon */
 .navbar ul li a .lord-icon {
     width: 24px;
@@ -257,8 +277,9 @@ body {
 /* Asegurar que el contenido interno de cada card se distribuya bien */
 .feature h1 {
     font-family: var(--league-spartan);
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 5px 0;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -825,6 +846,11 @@ body {
     text-align: center;
     padding: 30px;
 }
+.faq-item {
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 8px;
+}
 .faq-question {
     width: 100%; /* Botón ocupa todo el ancho disponible */
     background:transparent;
@@ -850,6 +876,7 @@ body {
     border-radius: 5px;
     text-align: left;
     background-color: white;
+    margin-top: 4px;
 }
 .faq-answer p {
     font-size: 16px;
@@ -1225,7 +1252,6 @@ button:hover {
     }
     .feature {
         width: calc(33.333% - 16px);
-        max-width: 220px;
     }
     .features-carousel h3 {
         font-size: 36px;
@@ -1290,7 +1316,7 @@ button:hover {
         padding: 9px 14px;
     }
     .feature h1{
-        font-size: 16px;
+        font-size: 22px;
         line-height: 1.15;
     }
     .how-it-works-container {
@@ -1375,12 +1401,11 @@ button:hover {
         font-size: 16px;
     }
     .feature h1 {
-        font-size: 14px;
+        font-size: 22px;
         line-height: 1.15;
     }
     .feature {
         width: calc(33.333% - 14px);
-        max-width: 180px;
         padding: 16px 12px;
         min-height: 160px;
     }
@@ -1496,5 +1521,356 @@ button:hover {
     }
     .step h2 {
         font-size: 22px;
+    }
+}
+
+/* ---------------------- ALIADOS ---------------------- */
+.allies-hero {
+    height: 760px;
+}
+.allies-hero .carousel-item {
+    padding: 120px 20px 40px;
+}
+.allies-hero-surface {
+    background-color: var(--cafecito);
+}
+.allies-hero-surface-light {
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(180deg, #d8c8c0 0%, #cbb8ae 52%, #baa39a 100%);
+}
+.allies-hero-surface-warm {
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(180deg, #b49b90 0%, #a98f85 55%, #8f776d 100%);
+}
+.allies-hero-surface-deep {
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(180deg, #8d786f 0%, #77635c 55%, #5f4f49 100%);
+}
+.allies-hero-copy {
+    max-width: 860px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+.allies-hero .carousel-item h1 {
+    font-size: 78px;
+}
+.allies-hero-copy .allies-kicker {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 7px 14px;
+}
+.allies-hero-copy p {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.35;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
+}
+.allies-hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+.carousel-item .btn.btn-secondary-light {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.46);
+}
+.carousel-item .btn.btn-secondary-light:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+.allies-copy-block,
+.allies-audience-shell,
+.faq-list {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.allies-copy-block {
+    display: grid;
+    gap: 18px;
+    padding: 0 20px 30px;
+}
+.allies-copy-block p,
+.allies-audience-shell p,
+.allies-section-subtitle,
+.allies-earnings-note {
+    font-size: 24px;
+    color: #5f534d;
+    line-height: 1.45;
+    text-align: center;
+}
+.allies-benefits .features-wrapper {
+    max-width: 1200px;
+}
+.allies-benefits .feature {
+    width: calc(25% - 20px);
+}
+.allies-uniform-card {
+    min-height: 220px;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.feature p {
+    font-size: 18px;
+    color: #6b615d;
+    line-height: 1.3;
+    font-weight: 300;
+    margin: 0;
+}
+.allies-feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(180, 155, 144, 0.14);
+    color: var(--cafecito);
+    font-size: 24px;
+    margin-bottom: 2px;
+}
+.allies-feature-compact-text h1 {
+    font-size: 22px;
+}
+.allies-feature-compact-text p {
+    font-size: 17px;
+}
+.allies-process .how-it-works-container {
+    max-width: 1200px;
+}
+.allies-process .step {
+    width: calc(25% - 20px);
+}
+.allies-packages-grid,
+.allies-earnings-grid,
+.allies-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 20px;
+}
+.allies-hero .carousel-indicators {
+    display: none;
+}
+.allies-package-copy {
+    color: #5f534d;
+    font-size: 20px;
+    line-height: 1.4;
+}
+.allies-earning-card {
+    width: 100%;
+}
+.allies-earning-card .package-price {
+    font-size: 18px;
+    padding: 7px 14px;
+}
+.allies-earning-label {
+    font-size: 18px;
+    color: #6b615d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.allies-earning-value {
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--heading-tone);
+    line-height: 1;
+}
+.allies-earnings-note {
+    margin-top: 26px;
+    padding: 0 20px;
+}
+.allies-audience-shell {
+    display: grid;
+    gap: 24px;
+    padding: 10px 20px 30px;
+}
+.allies-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+.allies-role-card {
+    gap: 8px;
+    min-height: 120px;
+    padding: 14px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(180, 155, 144, 0.42);
+    color: var(--text-strong);
+    font-size: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+.allies-role-card i {
+    color: var(--cafecito);
+    font-size: 18px;
+}
+.allies-role-card span {
+    line-height: 1.2;
+}
+.allies-role-card.allies-uniform-card {
+    min-height: 120px;
+    padding: 14px 12px;
+    gap: 8px;
+}
+.allies-faq {
+    padding-bottom: 40px;
+}
+.faq-list {
+    padding: 0 20px 10px;
+}
+.allies-final-cta {
+    padding-bottom: 70px;
+}
+.allies-cta-card {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+.allies-cta-card p {
+    text-align: center;
+    margin-bottom: 8px;
+}
+.allies-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    background: var(--cafecito);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    margin-top: 14px;
+}
+.allies-cta-button:hover {
+    background: var(--cta-hover);
+    color: var(--cta-hover-text);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(180, 155, 144, 0.26);
+}
+.allies-cta-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+@media (max-width: 768px) {
+    .allies-hero .carousel-item h1 {
+        font-size: 58px;
+    }
+    .allies-benefits .feature,
+    .allies-process .step {
+        width: calc(50% - 20px);
+    }
+    .allies-hero-copy p,
+    .allies-copy-block p,
+    .allies-audience-shell p,
+    .allies-section-subtitle,
+    .allies-earnings-note {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .allies-hero {
+        height: 700px;
+    }
+    .allies-hero .carousel-item h1 {
+        font-size: 46px;
+    }
+    .allies-hero-copy p {
+        font-size: 21px;
+    }
+    .allies-packages-grid,
+    .allies-earnings-grid,
+    .allies-portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .allies-benefits .feature,
+    .allies-process .step {
+        width: 100%;
+    }
+    .allies-chip-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .allies-role-card {
+        font-size: 12px;
+    }
+    .allies-role-card.allies-uniform-card {
+        min-height: 100px;
+        padding: 12px 8px;
+    }
+    .allies-role-card i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .allies-hero {
+        height: 640px;
+    }
+    .allies-hero .carousel-item h1 {
+        font-size: 40px;
+    }
+    .allies-kicker {
+        font-size: 13px;
+        letter-spacing: 0.8px;
+    }
+    .allies-hero-copy p,
+    .allies-copy-block p,
+    .allies-audience-shell p,
+    .allies-section-subtitle,
+    .allies-earnings-note {
+        font-size: 18px;
+    }
+    .allies-package-copy,
+    .feature p,
+    .allies-earning-label,
+    .allies-role-card {
+        font-size: 17px;
+    }
+    .allies-chip-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+    .allies-role-card {
+        border-radius: 10px;
+    }
+    .allies-role-card.allies-uniform-card {
+        min-height: 92px;
+        padding: 10px 6px;
+    }
+    .allies-role-card i {
+        font-size: 14px;
+    }
+    .allies-earning-value {
+        font-size: 36px;
     }
 }

@@ -231,15 +231,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     faqItems.forEach((item) => {
         const question = item.querySelector(".faq-question");
+        question.setAttribute("aria-expanded", "false");
 
         question.addEventListener("click", function () {
-            // Alternar la clase 'active' en el item actual
-            item.classList.toggle("active");
+            const isActive = item.classList.toggle("active");
+            question.setAttribute("aria-expanded", String(isActive));
 
             // Cerrar otros elementos abiertos
             faqItems.forEach((otherItem) => {
                 if (otherItem !== item) {
                     otherItem.classList.remove("active");
+                    otherItem.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
                 }
             });
         });

@@ -62,6 +62,20 @@ window.MODEL_CATALOG = {
     ],
     "wedding-web": [
         {
+            name: "Modelo Terracota",
+            image: "/wedding/web/Modelo-10/media/T1.png",
+            gallery: [
+                "/wedding/web/Modelo-10/media/T1.png",
+                "/wedding/web/Modelo-10/media/T2.png",
+                "/wedding/web/Modelo-10/media/T3.png"
+            ],
+            theme: "classic",
+            format: "Web",
+            price: 699,
+            demo: "https://modeloterracota.thetwodesign.com/?id=1",
+            buy: "/wedding/web/Modelo-10/modelo-terracota.html"
+        },
+        {
             name: "Modelo Nude",
             image: "/wedding/web/Modelo-9/media/N1.png",
             gallery: [
